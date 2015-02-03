@@ -67,11 +67,11 @@ script AppDelegate
     end buttonhandlerremovepurge_
     
     on buttonhandlershow_(sender)
-        do shell script "showbash.bash"
+        do shell script "show.bash"
     end buttonhandlershow_
     
     on buttonhandlerhide_(sender)
-        do shell script "hidebash.bash"
+        do shell script "hide.bash"
     end buttonhandlerhide_
     
     
