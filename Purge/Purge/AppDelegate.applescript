@@ -49,6 +49,12 @@ script AppDelegate
         do shell script "/Applications/purge/install.bash" with administrator privileges
         do shell script "cp /Applications/purge/sudoers2 /etc/sudoers; chmod 440 /etc/sudoers" with administrator privileges
         do shell script "/Applications/purge/createpurge.bash" with administrator privileges
+        if (exists folder "Applications:purge.zip" of the startup disk) then
+            try
+                do shell script "cd /Applications; rm -R OpenPlex.app" with administrator privileges
+                onerror
+            end try
+        end if
     end tell
     end buttonhandlerinstall_
     
