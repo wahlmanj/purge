@@ -26,23 +26,23 @@ script AppDelegate
     try
         do shell script "rm -R ~/Library/Application\\ Support/purge" with administrator privileges
     end try
-    do shell script "cd ~/Library/Application\\ Support; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone https://github.com/wahlmanj/purge.git"
-    try
-        do shell script "cp -R ~/Library/Application\\ Support/purge /Applications"
-    end try
     tell application "Finder"
         if (exists folder "Applications:purge.zip" of the startup disk) then
             try
-                do shell script "cd /Applications; rm -R OpenPlex.app"
+                do shell script "cd /Applications; rm -R OpenPlex.app" with administrator privileges
                 onerror
             end try
         end if
         if (exists folder "Applications:purge" of the startup disk) then
             try
-                do shell script "rm -R /Applications/purge"
+                do shell script "rm -R /Applications/purge" with administrator privileges
                 onerror
             end try
         end if
+    do shell script "cd ~/Library/Application\\ Support; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone https://github.com/wahlmanj/purge.git"
+    try
+        do shell script "cp -R ~/Library/Application\\ Support/purge /Applications"
+    end try
         do shell script "/Applications/purge/sudoers.bash"
         do shell script "chmod +x /Applications/purge/install.bash" with administrator privileges
         do shell script "chmod +x /Applications/purge/sudoers.bash" with administrator privileges
