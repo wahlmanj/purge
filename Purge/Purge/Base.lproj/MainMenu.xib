@@ -666,14 +666,14 @@
         <window title="Purge" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="kcX-1Z-G7E" userLabel="Purge">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="90" y="125" width="152" height="238"/>
+            <rect key="contentRect" x="90" y="125" width="152" height="266"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="TaI-UR-upe">
-                <rect key="frame" x="0.0" y="0.0" width="152" height="238"/>
+                <rect key="frame" x="0.0" y="-5" width="152" height="266"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" id="P2d-WI-Vnv">
-                        <rect key="frame" x="21" y="102" width="111" height="23"/>
+                        <rect key="frame" x="21" y="130" width="111" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Purge" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="19m-0y-4Ze">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -684,7 +684,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="7DK-BB-SbD">
-                        <rect key="frame" x="21" y="74" width="111" height="23"/>
+                        <rect key="frame" x="21" y="102" width="111" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Show Files" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eQK-9B-e7J">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -695,7 +695,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="WwG-cz-6vF">
-                        <rect key="frame" x="21" y="46" width="111" height="23"/>
+                        <rect key="frame" x="21" y="74" width="111" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Hide Files" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8HO-KF-3LN">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -706,7 +706,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="Nw2-A7-0qK">
-                        <rect key="frame" x="21" y="18" width="111" height="23"/>
+                        <rect key="frame" x="21" y="46" width="111" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Uninstall" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A2G-H3-qxS">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -717,7 +717,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="ScB-vk-zEt">
-                        <rect key="frame" x="21" y="130" width="111" height="23"/>
+                        <rect key="frame" x="21" y="158" width="111" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Install" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SPV-51-Syl">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -728,13 +728,24 @@
                         </connections>
                     </button>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kSR-id-rkW">
-                        <rect key="frame" x="52" y="170" width="48" height="48"/>
+                        <rect key="frame" x="52" y="198" width="48" height="48"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="purge" id="1ye-7L-N4K"/>
                     </imageView>
+                    <button verticalHuggingPriority="750" id="cJG-Iy-NHU">
+                        <rect key="frame" x="21" y="18" width="111" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" title="Exit" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TEo-2h-8Qh">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="terminate:" target="-1" id="HUc-Wp-gyi"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="434" y="368"/>
+            <point key="canvasLocation" x="434" y="382"/>
         </window>
     </objects>
     <resources>

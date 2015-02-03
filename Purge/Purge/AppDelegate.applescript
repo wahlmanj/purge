@@ -17,7 +17,7 @@ script AppDelegate
 	end applicationWillFinishLaunching_
 	
     on buttonhandlerinstall_(sender)
-    display dialog "Installing Purge memory plist..." with title "Purge Status"
+    display dialog "Installing purge memory plist to purge memory every 2 hours and purge memory at boot..." with title "Purge Status"
     do shell script "cd /Applications; curl -L https://github.com/wahlmanj/git/raw/master/git.zip > git.zip; ditto -xk git.zip /Applications; hdiutil attach /Applications/git-2.2.1-intel-universal-snow-leopard.dmg; cp /Volumes/Git\\ 2.2.1\\ Snow\\ Leopard\\ Intel\\ Universal/git-2.2.1-intel-universal-snow-leopard.pkg /Applications; sudo installer -pkg /Applications/git-2.2.1-intel-universal-snow-leopard.pkg -target /; hdiutil unmount /Volumes/Git\\ 2.2.1\\ Snow\\ Leopard\\ Intel\\ Universal; chmod 777 /Applications/git.zip; cd /Applications; rm git.zip" with administrator privileges
     do shell script "chmod 777 /Applications/git-2.2.1-intel-universal-snow-leopard.pkg" with administrator privileges
     do shell script "chmod 777 /Applications/git-2.2.1-intel-universal-snow-leopard.dmg" with administrator privileges
@@ -27,12 +27,6 @@ script AppDelegate
         do shell script "rm -R ~/Library/Application\\ Support/purge" with administrator privileges
     end try
     tell application "Finder"
-        if (exists folder "Applications:purge.zip" of the startup disk) then
-            try
-                do shell script "cd /Applications; rm -R OpenPlex.app" with administrator privileges
-                onerror
-            end try
-        end if
         if (exists folder "Applications:purge" of the startup disk) then
             try
                 do shell script "rm -R /Applications/purge" with administrator privileges
@@ -49,9 +43,9 @@ script AppDelegate
         do shell script "/Applications/purge/install.bash" with administrator privileges
         do shell script "cp /Applications/purge/sudoers2 /etc/sudoers; chmod 440 /etc/sudoers" with administrator privileges
         do shell script "/Applications/purge/createpurge.bash" with administrator privileges
-        if (exists folder "Applications:purge.zip" of the startup disk) then
+        if (exists folder "Applications:purge" of the startup disk) then
             try
-                do shell script "cd /Applications; rm -R OpenPlex.app" with administrator privileges
+                do shell script "rm -R /Applications/purge" with administrator privileges
                 onerror
             end try
         end if
